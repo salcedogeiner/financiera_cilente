@@ -28,7 +28,10 @@ angular
     'ui.grid.exporter',
     'ui.grid.autoResize',
     'ngStorage',
-    'financieraService'
+    'financieraService',
+    'administrativaService',
+    'goLinkFactory',
+    'ui.utils.masks'
   ])
     .config(['$locationProvider','$routeProvider', function($locationProvider, $routeProvider) {
       $locationProvider.hashPrefix("");
@@ -67,6 +70,26 @@ angular
         templateUrl: 'views/plan_cuentas/crear_plan.html',
         controller: 'PlanCuentasCrearPlanCtrl',
         controllerAs: 'crearPlan'
+      })
+      .when('/orden_pago_all', {
+        templateUrl: 'views/orden_pago/orden_pago.html',
+        controller: 'OrdenPagoCtrl',
+        controllerAs: 'ordenPago'
+      })
+      .when('/add_orden_pago_proveedor', {
+        templateUrl: 'views/orden_pago/add_orden_pago_proveedor.html',
+        controller: 'AddOrdenPagoProveedorCtrl',
+        controllerAs: 'addOrdenPagoProveedor'
+      })
+      .when('/view_orden_pago_proveedor/:Id', {
+        templateUrl: 'views/orden_pago/view_orden_pago_proveedor.html',
+        controller: 'ViewOrdenPagoProveedorCtrl',
+        controllerAs: 'viewOrdenPagoProveedor'
+      })
+      .when('/edit_orden_pago_proveedor/:Id', {
+        templateUrl: 'views/orden_pago/edit_orden_pago_proveedor.html',
+        controller: 'EditOrdenPagoProveedorCtrl',
+        controllerAs: 'editOrdenPagoProveedor'
       })
       .otherwise({
         redirectTo: '/'
