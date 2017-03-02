@@ -94,32 +94,32 @@
           <div class="form-group">
             <label for="No_reg_presu" class="col-sm-1 control-label">No. Registro Presupuestal</label>
             <div class="col-sm-5">
-              <select ng-model="rp_seleccion.Id" ng-options="i.Id as i.NumeroRegistroPresupuestal for i in rp_by_tercero_data" class="form-control"  ng-change="get_data_rp_select(rp_seleccion)" required>
+              <select ng-model="ordenPago.RegistroPresupuestal.Id" ng-options="i.Id as i.NumeroRegistroPresupuestal for i in rp_by_tercero_data" class="form-control"  ng-change="registro_presupuestal_select(ordenPago.RegistroPresupuestal.Id)" required>
               </select>
             </div>
             <label for="cod_rubro" class="col-sm-1 control-label">Valor Registro Presupuestal</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="cod_rubro" placeholder="Valor Registro Presupuestal" ng-model="consultaOrdenPago.RP_valor" disabled ui-number-mask/>
+              <input type="text" class="form-control" id="cod_rubro" placeholder="Valor Registro Presupuestal" ng-model="ordenPago.RegistroPresupuestal.RP_valor" disabled ui-number-mask/>
             </div>
           </div>
           <div class="form-group">
             <label for="cod_rubro" class="col-sm-1 control-label">Cod. Rubro Presupuestal</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="cod_rubro" placeholder="Cod. Rubro Presupuestal" ng-model="consultaOrdenPago.RubroCodigo" disabled/>
+              <input type="text" class="form-control" id="cod_rubro" placeholder="Cod. Rubro Presupuestal" ng-model="ordenPago.RegistroPresupuestal.RubroCodigo" disabled/>
             </div>
             <label for="cod_rubro" class="col-sm-1 control-label">Rubro Descripción</label>
             <div class="col-sm-5">
-              <textarea rows="2"  class="form-control" id="rubro_descri" placeholder="Rubro Descripción" ng-model="consultaOrdenPago.RubroDescripcion" disabled/></textarea>
+              <textarea rows="2"  class="form-control" id="rubro_descri" placeholder="Rubro Descripción" ng-model="ordenPago.RegistroPresupuestal.RubroDescripcion" disabled/></textarea>
             </div>
           </div>
           <div class="form-group">
             <label for="no_disponibilidad" class="col-sm-1 control-label">No. Disponibilidad Presupuestal (CDP)</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="no_disponibilidad" placeholder="No. Disponibilidad" ng-model="consultaOrdenPago.DisponibilidadNumeroDisponibilidad" disabled/>
+              <input type="text" class="form-control" id="no_disponibilidad" placeholder="No. Disponibilidad" ng-model="ordenPago.RegistroPresupuestal.DisponibilidadNumeroDisponibilidad" disabled/>
             </div>
             <label for="objeto_disponibilidad" class="col-sm-1 control-label">Objeto Disponibilidad</label>
             <div class="col-sm-5">
-              <textarea rows="3" class="form-control" id="objeto_disponibilidad" placeholder="Objeto Disponibilidad" ng-model="consultaOrdenPago.DisponibilidadObjeto" disabled/> </textarea>
+              <textarea rows="3" class="form-control" id="objeto_disponibilidad" placeholder="Objeto Disponibilidad" ng-model="ordenPago.RegistroPresupuestal.DisponibilidadObjeto" disabled/> </textarea>
             </div>
           </div>
           <div class="form-group">
@@ -129,7 +129,7 @@
             </div>
             <label for="vigencia_presupuesto" class="col-sm-1 control-label">Vigencia Presupuestal</label>
             <div class="col-sm-5">
-              <input type="text"  placeholder="Vigencia Presupuestal Segun el RP" class="form-control" id="vigencia_presupuesto" ng-model="consultaOrdenPago.VigenciaPresupuestal" disabled/>
+              <input type="text"  placeholder="Vigencia Presupuestal Segun el RP" class="form-control" id="vigencia_presupuesto" ng-model="ordenPago.RegistroPresupuestal.VigenciaPresupuestal" disabled/>
             </div>
           </div>
         </div>

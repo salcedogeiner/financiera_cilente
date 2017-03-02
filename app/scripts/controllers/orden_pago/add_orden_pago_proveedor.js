@@ -74,18 +74,26 @@ angular.module('financieraClienteApp')
           }
         });
     }
-    $scope.get_data_rp_select = function(numero_rp){
-      if (numero_rp.Id) {
-        $scope.ordenPago.RegistroPresupuestal = numero_rp.Id;
-        administrativaRequest.get("registo_presupuestal", "query=Id%3A" + numero_rp.Id)
+    // cambiar por id jota unidad_ejecutora_select
+    $scope.registro_presupuestal_select = function(rp_id){
+      console.log(rp_id)
+      if (rp_id) {
+        //$scope.ordenPago.RegistroPresupuestal = numero_rp.Id;
+        financieraRequest.get("registro_presupuestal", "query=Id%3A" + rp_id)
           .then(function(response){
             if(response.data){
+              $scope.ordenPago.RegistroPresupuestal = response.data[0];
+              console.log($scope.ordenPago.RegistroPresupuestal)
+
+              /*
               $scope.consultaOrdenPago.RP_valor = response.data[0].Valor;
               $scope.consultaOrdenPago.RubroCodigo = response.data[0].Rubro.Codigo;
               $scope.consultaOrdenPago.RubroDescripcion = response.data[0].Rubro.Descripcion;
               $scope.consultaOrdenPago.DisponibilidadNumeroDisponibilidad = response.data[0].Disponibilidad.NumeroDisponibilidad;
               $scope.consultaOrdenPago.DisponibilidadObjeto = response.data[0].Disponibilidad.Objeto;
+
               $scope.consultaOrdenPago.VigenciaPresupuestal = response.data[0].Vigencia;
+              */
             }
           });
       }
